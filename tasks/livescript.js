@@ -9,7 +9,7 @@
 module.exports = function(grunt) {
   'use strict';
 
-  grunt.registerMultiTask('livescript', 'Compile LieveScript files into JavaScript', function() {
+  grunt.registerMultiTask('livescript', 'Compile LiveScript files into JavaScript', function() {
     var path = require('path');
 
     var options = this.options({
