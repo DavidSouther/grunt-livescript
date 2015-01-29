@@ -1,7 +1,7 @@
 {
   "name": "grunt-livescript",
   "description": "Compile LiveScript files to JavaScript.",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "homepage": "https://github.com/DavidSouther/grunt-livescript",
   "author": {
     "name": "David Souther",
