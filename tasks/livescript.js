@@ -16,6 +16,7 @@ module.exports = function(grunt) {
       bare: false,
       basePath: false,
       flatten: false,
+      header: true,
       separator: grunt.util.linefeed
     });
 
