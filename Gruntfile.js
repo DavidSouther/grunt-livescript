@@ -36,18 +36,20 @@ module.exports = function(grunt) {
     // Configuration to be run (and then tested).
     livescript: {
       options: {
+        header: false,
         bare: true
       },
       compile: {
         files: {
           'tmp/livescript.js': ['test/fixtures/livescript1.ls'],
           'tmp/concat.js': ['test/fixtures/livescript1.ls', 'test/fixtures/livescript2.ls'],
-          'tmp/individual/*.js': ['test/fixtures/livescript1.ls', 'test/fixtures/livescript2.ls', 'test/fixtures/level2/livescript3.ls']
         }
       },
       flatten: {
         files: {
-          'tmp/individual_flatten/*.js': ['test/fixtures/livescript1.ls', 'test/fixtures/livescript2.ls', 'test/fixtures/level2/livescript3.ls']
+          'tmp/individual_flatten/livescript1.js': 'test/fixtures/livescript1.ls',
+          'tmp/individual_flatten/livescript2.js': 'test/fixtures/livescript2.ls',
+          'tmp/individual_flatten/livescript3.js': 'test/fixtures/level2/livescript3.ls'
         },
         options: {
           flatten: true
