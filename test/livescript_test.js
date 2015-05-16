@@ -9,11 +9,11 @@ exports.livescript = {
 
     var actual = grunt.file.read('tmp/livescript.js');
     var expected = grunt.file.read('test/expected/livescript.js');
-    test.equal(expected, actual, 'should compile livescript to javascript');
+    test.equal(expected, actual + '\n', 'should compile livescript to javascript');
 
     actual = grunt.file.read('tmp/concat.js');
     expected = grunt.file.read('test/expected/concat.js');
-    test.equal(expected, actual, 'should compile multiple livescript files to a single javascript file');
+    test.equal(expected, actual + '\n', 'should compile multiple livescript files to a single javascript file');
 
     test.done();
   }
