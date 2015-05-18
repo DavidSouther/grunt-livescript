@@ -1,5 +1,12 @@
+
 var grunt = require('grunt');
-var fs = require('fs');
+
+function read(fileName) {
+  var content = grunt.file.read(fileName);
+  // ensures tests passing on windows
+  content =  content.replace(/\r/g,'');
+  return content;
+}
 
 exports.livescript = {
   compile: function(test) {
@@ -7,12 +14,12 @@ exports.livescript = {
 
     test.expect(2);
 
-    var actual = grunt.file.read('tmp/livescript.js');
-    var expected = grunt.file.read('test/expected/livescript.js');
+    var actual = read('tmp/livescript.js');
+    var expected = read('test/expected/livescript.js');
     test.equal(expected, actual, 'should compile livescript to javascript');
 
-    actual = grunt.file.read('tmp/concat.js');
-    expected = grunt.file.read('test/expected/concat.js');
+    actual = read('tmp/concat.js');
+    expected = read('test/expected/concat.js');
     test.equal(expected, actual, 'should compile multiple livescript files to a single javascript file');
 
     test.done();
