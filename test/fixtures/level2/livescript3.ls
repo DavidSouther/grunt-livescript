@@ -1,2 +1,2 @@
 class HelloWorld
-  @test: 'test'
+  @test = 'test'
