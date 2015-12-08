@@ -32,7 +32,7 @@ module.exports = function(grunt) {
     this.files.forEach(function(file) {
       var output = file.src.filter(function(filepath) {
         if (!grunt.file.exists(filepath)) {
-          grunt.og.warn('Source file "' + filepath + '" not found.');
+          grunt.log.warn('Source file "' + filepath + '" not found.');
           return false;
         } else {
           return true;
